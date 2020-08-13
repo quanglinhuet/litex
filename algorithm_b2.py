@@ -14,4 +14,4 @@ def f(x,y):
     for i in range(x,line_to_1[indexInLine],-1): way.append(i)
     for i in line_to_1[indexInLine::-1]: way.append(i)
     print('Way: '+str(way))
-f(3,51)
+f(99,100)

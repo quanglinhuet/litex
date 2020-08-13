@@ -1,7 +1,6 @@
 import csv
 import pymysql
 
-
 connection = pymysql.connect('localhost','root','','litsql')
 connection.autocommit(True)
 
@@ -28,4 +27,3 @@ with connection.cursor() as cursor:
                 print(row)
                 print(cursor.execute(sql,row))
         print(line_count)
-    
