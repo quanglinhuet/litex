@@ -1,17 +1,12 @@
 def f(x,y):
-    line_to_1=[y]
-    while y!=1:
-        y=y//2 if y%2==0 else y+1  
-        line_to_1.append(y)
-    minDistance=1000000000
-    indexInLine=0
-    for i in line_to_1:
-        if x>i and x-i<minDistance:
-            minDistance=x-i
-            indexInLine=line_to_1.index(i)
-    print('Min step: '+str(minDistance+indexInLine))
-    way=[]
-    for i in range(x,line_to_1[indexInLine],-1): way.append(i)
-    for i in line_to_1[indexInLine::-1]: way.append(i)
-    print('Way: '+str(way))
-f(99,100)
+    s=str(y)
+    count=0
+    while y>x:
+        y=y//2 if y%2==0 else y+1
+        count+=1
+        s= str(y)+' '+ s
+        if y<x: 
+            count =count + x-y
+            for i in range(y+1,x+1): s= str(i)+' '+s
+    print('Step: '+ str(count)+'\n Way: '+s)
+f(3,51)
